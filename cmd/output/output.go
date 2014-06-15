@@ -59,5 +59,5 @@ func main() {
 	if err := usbio.Set(uint8(*port), uint8(bitpat), 0); err != nil {
 		log.Fatalf("Error in writing: %s\n", err)
 	}
-	log.Printf("Successfully wrote out for USB-IO: port is %d, data is 0x%b.\n", *port, bitpat)
+	log.Printf("Successfully wrote in USB-IO: port is %d, data is 0x%b.\n", *port, bitpat)
 }
