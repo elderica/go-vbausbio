@@ -52,9 +52,12 @@ func Start() (err error) {
 	return nil
 }
 
-func Set(port uint8, data byte, pulse uint8) error {
+func Set(port uint8, data uint16, pulse uint8) error {
 	if uio_out == nil {
 		return errors.New("call Start() first")
+	}
+	if port > 1 {
+		return errors.New("invalid port number")
 	}
 	r1, _, _ := uio_out.Call(uintptr(port), uintptr(data), uintptr(pulse))
 	if r1 != 0 {
