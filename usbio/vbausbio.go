@@ -66,9 +66,9 @@ func Set(port uint8, data uint16, pulse uint8) error {
 	return nil
 }
 
-func Get(port uint8 , pulse uint8) (byte, error) {
+func Get(port uint8, pulse uint8) (uint16, error) {
 	var(
-		data byte
+		data uint16
 		p = unsafe.Pointer(&data)
 	)
 
